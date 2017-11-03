@@ -28,10 +28,6 @@ import com.how.should.eat.ui.splash.SplashActivity;
 
 import dagger.Component;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 @PerActivity
 @Component(dependencies = ApplicationComponent.class, modules = ActivityModule.class)
 public interface ActivityComponent {

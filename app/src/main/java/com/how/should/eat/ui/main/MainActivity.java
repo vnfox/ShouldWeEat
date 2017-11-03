@@ -45,10 +45,6 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public class MainActivity extends BaseActivity implements MainMvpView {
 
     @Inject
