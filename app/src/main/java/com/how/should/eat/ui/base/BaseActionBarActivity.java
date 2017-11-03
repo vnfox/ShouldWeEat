@@ -35,7 +35,7 @@ public abstract class BaseActionBarActivity extends BaseActivity
         implements BaseActionView {
 
     @BindView(R.id.toolbar)
-    Toolbar mToolbar;
+    protected Toolbar mToolbar;
 
     private ActivityComponent mActivityComponent;
 

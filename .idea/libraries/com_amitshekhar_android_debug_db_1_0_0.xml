@@ -5,6 +5,8 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/debug-db-1.0.0.aar/ce3279aa090056693d0882490dde77b5/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amitshekhar.android/debug-db/1.0.0/1cf3dc9d15fcc6f3012c01badb7d5861bb71c559/debug-db-1.0.0-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

@@ -15,8 +15,9 @@
 
 package com.how.should.eat.di.component;
 
-import com.how.should.eat.ui.main.MainActivity;
-import com.how.should.eat.ui.main.rating.RateUsDialog;
+import com.how.should.eat.ui.main.MainFeedFragment;
+import com.how.should.eat.ui.menu.MainMenuActivity;
+import com.how.should.eat.ui.menu.rating.RateUsDialog;
 import com.how.should.eat.di.PerActivity;
 import com.how.should.eat.di.module.ActivityModule;
 import com.how.should.eat.ui.about.AboutFragment;
@@ -32,7 +33,7 @@ import dagger.Component;
 @Component(dependencies = ApplicationComponent.class, modules = ActivityModule.class)
 public interface ActivityComponent {
 
-    void inject(MainActivity activity);
+    void inject(MainMenuActivity activity);
 
     void inject(LoginActivity activity);
 
@@ -47,5 +48,7 @@ public interface ActivityComponent {
     void inject(BlogFragment fragment);
 
     void inject(RateUsDialog dialog);
+
+    void inject(MainFeedFragment f);
 
 }

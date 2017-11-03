@@ -39,7 +39,7 @@ import butterknife.ButterKnife;
 public class BlogFragment extends BaseFragment implements
         BlogMvpView, BlogAdapter.Callback {
 
-    private static final String TAG = "BlogFragment";
+    public static final String TAG = "BlogFragment";
 
     @Inject
     BlogMvpPresenter<BlogMvpView> mPresenter;

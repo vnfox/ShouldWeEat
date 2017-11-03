@@ -22,7 +22,7 @@ import android.os.Bundle;
 import com.how.should.eat.R;
 import com.how.should.eat.ui.base.BaseActivity;
 import com.how.should.eat.ui.login.LoginActivity;
-import com.how.should.eat.ui.main.MainActivity;
+import com.how.should.eat.ui.menu.MainMenuActivity;
 
 import javax.inject.Inject;
 
@@ -62,7 +62,7 @@ public class SplashActivity extends BaseActivity implements SplashMvpView {
 
     @Override
     public void openMainActivity() {
-        Intent intent = MainActivity.getStartIntent(SplashActivity.this);
+        Intent intent = MainMenuActivity.getStartIntent(SplashActivity.this);
         startActivity(intent);
         finish();
     }

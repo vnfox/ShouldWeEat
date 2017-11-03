@@ -45,20 +45,20 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.how.should.eat.ui.main.MainActivity"
+            android:name="com.how.should.eat.ui.menu.MainMenuActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
 
         <activity
             android:name="com.how.should.eat.ui.feed.FeedActivity"
             android:launchMode="singleTop"
-            android:parentActivityName="com.how.should.eat.ui.main.MainActivity"
+            android:parentActivityName="com.how.should.eat.ui.menu.MainMenuActivity"
             android:screenOrientation="portrait">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.how.should.eat.ui.main.MainActivity" />
+                android:value="com.how.should.eat.ui.menu.MainMenuActivity" />
         </activity>
 
     </application>

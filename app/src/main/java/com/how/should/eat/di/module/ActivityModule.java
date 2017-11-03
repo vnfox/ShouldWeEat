@@ -29,9 +29,14 @@ import com.how.should.eat.ui.feed.blogs.BlogMvpPresenter;
 import com.how.should.eat.ui.feed.opensource.OpenSourceAdapter;
 import com.how.should.eat.ui.feed.opensource.OpenSourceMvpPresenter;
 import com.how.should.eat.ui.feed.opensource.OpenSourceMvpView;
-import com.how.should.eat.ui.main.MainMvpPresenter;
-import com.how.should.eat.ui.main.MainPresenter;
-import com.how.should.eat.ui.main.rating.RatingDialogMvpPresenter;
+import com.how.should.eat.ui.main.MainFeedAdapter;
+import com.how.should.eat.ui.main.MainFeedPresenter;
+import com.how.should.eat.ui.main.MainFeedPresenterImpl;
+import com.how.should.eat.ui.main.MainFeedView;
+import com.how.should.eat.ui.menu.MainMenuPresenterImpl;
+import com.how.should.eat.ui.menu.MainMenuView;
+import com.how.should.eat.ui.menu.MainMenuPresenter;
+import com.how.should.eat.ui.menu.rating.RatingDialogMvpPresenter;
 import com.how.should.eat.di.PerActivity;
 import com.how.should.eat.ui.about.AboutMvpPresenter;
 import com.how.should.eat.ui.about.AboutPresenter;
@@ -44,9 +49,8 @@ import com.how.should.eat.ui.feed.opensource.OpenSourcePresenter;
 import com.how.should.eat.ui.login.LoginMvpPresenter;
 import com.how.should.eat.ui.login.LoginMvpView;
 import com.how.should.eat.ui.login.LoginPresenter;
-import com.how.should.eat.ui.main.MainMvpView;
-import com.how.should.eat.ui.main.rating.RatingDialogMvpView;
-import com.how.should.eat.ui.main.rating.RatingDialogPresenter;
+import com.how.should.eat.ui.menu.rating.RatingDialogMvpView;
+import com.how.should.eat.ui.menu.rating.RatingDialogPresenter;
 import com.how.should.eat.ui.splash.SplashMvpPresenter;
 import com.how.should.eat.ui.splash.SplashMvpView;
 import com.how.should.eat.ui.splash.SplashPresenter;
@@ -111,8 +115,8 @@ public class ActivityModule {
 
     @Provides
     @PerActivity
-    MainMvpPresenter<MainMvpView> provideMainPresenter(
-            MainPresenter<MainMvpView> presenter) {
+    MainMenuPresenter<MainMenuView> provideMainPresenter(
+            MainMenuPresenterImpl<MainMenuView> presenter) {
         return presenter;
     }
 
@@ -158,5 +162,16 @@ public class ActivityModule {
     @Provides
     LinearLayoutManager provideLinearLayoutManager(AppCompatActivity activity) {
         return new LinearLayoutManager(activity);
+    }
+
+    @Provides
+    MainFeedAdapter provideMainFeedAdapter() {
+        return new MainFeedAdapter(new ArrayList<BlogResponse.Blog>());
+    }
+
+    @Provides
+    MainFeedPresenter<MainFeedView> provideMainFeedPresenter(
+            MainFeedPresenterImpl<MainFeedView> presenter) {
+        return presenter;
     }
 }
