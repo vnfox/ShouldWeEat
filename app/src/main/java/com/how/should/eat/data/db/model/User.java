@@ -20,10 +20,6 @@ import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Property;
 
-/**
- * Created by janisharali on 08/12/16.
- */
-
 @Entity(nameInDb = "user")
 public class User {
 

@@ -18,9 +18,6 @@ package com.how.should.eat.data.network.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by janisharali on 28/01/17.
- */
 
 public class ApiError {
 

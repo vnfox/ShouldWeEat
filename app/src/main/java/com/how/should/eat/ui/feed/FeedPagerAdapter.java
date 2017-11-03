@@ -22,10 +22,6 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import com.how.should.eat.ui.feed.blogs.BlogFragment;
 import com.how.should.eat.ui.feed.opensource.OpenSourceFragment;
 
-/**
- * Created by Janisharali on 25/05/2017.
- */
-
 public class FeedPagerAdapter extends FragmentStatePagerAdapter {
 
     private int mTabCount;

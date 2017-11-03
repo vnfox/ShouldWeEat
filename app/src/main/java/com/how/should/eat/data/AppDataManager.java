@@ -48,10 +48,6 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.functions.Function;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 @Singleton
 public class AppDataManager implements DataManager {
 

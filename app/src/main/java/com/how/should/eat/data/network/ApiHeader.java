@@ -22,10 +22,6 @@ import com.how.should.eat.di.ApiInfo;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 @Singleton
 public class ApiHeader {
 

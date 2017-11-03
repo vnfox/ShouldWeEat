@@ -15,10 +15,6 @@
 
 package com.how.should.eat.ui.base;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 import com.androidnetworking.error.ANError;
 
 /**

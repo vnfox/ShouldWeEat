@@ -27,10 +27,6 @@ import org.greenrobot.greendao.annotation.ToMany;
 
 import java.util.List;
 
-/**
- * Created by janisharali on 08/12/16.
- */
-
 @Entity(nameInDb = "questions")
 public class Question {
 

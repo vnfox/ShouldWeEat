@@ -59,10 +59,6 @@ import dagger.Module;
 import dagger.Provides;
 import io.reactivex.disposables.CompositeDisposable;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 @Module
 public class ActivityModule {
 

@@ -23,10 +23,6 @@ import com.how.should.eat.data.network.model.LoginRequest;
 
 import io.reactivex.Observable;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public interface ApiHelper {
 
     ApiHeader getApiHeader();

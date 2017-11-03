@@ -23,11 +23,6 @@ import android.support.v4.content.ContextCompat;
 
 import com.how.should.eat.R;
 
-
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public final class ViewUtils {
 
     private ViewUtils() {

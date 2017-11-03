@@ -17,9 +17,6 @@ package com.how.should.eat.data.prefs;
 
 import com.how.should.eat.data.DataManager;
 
-/**
- * Created by janisharali on 27/01/17.
- */
 
 public interface PreferencesHelper {
 

@@ -20,10 +20,6 @@ import com.how.should.eat.ui.base.MvpView;
 
 import java.util.List;
 
-/**
- * Created by janisharali on 25/05/17.
- */
-
 public interface BlogMvpView extends MvpView {
 
     void updateBlog(List<BlogResponse.Blog> blogList);

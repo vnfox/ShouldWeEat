@@ -29,10 +29,6 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by janisharali on 25/05/17.
- */
-
 public class FeedActivity extends BaseActionBarActivity implements FeedMvpView {
 
     @Inject
@@ -40,9 +36,6 @@ public class FeedActivity extends BaseActionBarActivity implements FeedMvpView {
 
     @Inject
     FeedPagerAdapter mPagerAdapter;
-
-//    @BindView(R.id.toolbar)
-//    Toolbar mToolbar;
 
     @BindView(R.id.feed_view_pager)
     ViewPager mViewPager;
@@ -72,9 +65,6 @@ public class FeedActivity extends BaseActionBarActivity implements FeedMvpView {
     @Override
     protected void setUp() {
         super.setUp();
-
-//        setSupportActionBar(mToolbar);
-
 
         mPagerAdapter.setCount(2);
 

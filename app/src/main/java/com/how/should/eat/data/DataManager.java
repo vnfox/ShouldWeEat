@@ -22,10 +22,6 @@ import com.how.should.eat.data.prefs.PreferencesHelper;
 
 import io.reactivex.Observable;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public interface DataManager extends DbHelper, PreferencesHelper, ApiHelper {
 
     void updateApiHeader(Long userId, String accessToken);

@@ -30,11 +30,6 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public class AboutFragment extends BaseFragment implements AboutMvpView {
 
     public static final String TAG = "AboutFragment";

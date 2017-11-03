@@ -27,10 +27,6 @@ import javax.inject.Singleton;
 
 import io.reactivex.Observable;
 
-/**
- * Created by janisharali on 28/01/17.
- */
-
 @Singleton
 public class AppApiHelper implements ApiHelper {
 

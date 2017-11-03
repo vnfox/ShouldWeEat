@@ -21,10 +21,6 @@ import android.support.annotation.StringRes;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public abstract class BaseSubView extends ViewGroup implements SubMvpView {
 
     private MvpView mParentMvpView;

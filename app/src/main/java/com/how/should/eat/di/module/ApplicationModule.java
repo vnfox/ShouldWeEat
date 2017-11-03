@@ -41,10 +41,6 @@ import dagger.Module;
 import dagger.Provides;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 @Module
 public class ApplicationModule {
 

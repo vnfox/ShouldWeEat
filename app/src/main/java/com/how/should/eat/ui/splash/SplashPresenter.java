@@ -27,10 +27,6 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public class SplashPresenter<V extends SplashMvpView> extends BasePresenter<V>
         implements SplashMvpPresenter<V> {
 

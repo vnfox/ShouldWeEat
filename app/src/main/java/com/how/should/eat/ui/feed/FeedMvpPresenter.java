@@ -18,10 +18,6 @@ package com.how.should.eat.ui.feed;
 import com.how.should.eat.ui.base.MvpPresenter;
 import com.how.should.eat.ui.base.MvpView;
 
-/**
- * Created by janisharali on 25/05/17.
- */
-
 public interface FeedMvpPresenter<V extends MvpView> extends MvpPresenter<V> {
 
 }

@@ -36,10 +36,6 @@ import com.how.should.eat.di.component.ActivityComponent;
 
 import butterknife.Unbinder;
 
-/**
- * Created by janisharali on 24/05/17.
- */
-
 public abstract class BaseDialog extends DialogFragment implements DialogMvpView {
 
     private BaseActivity mActivity;

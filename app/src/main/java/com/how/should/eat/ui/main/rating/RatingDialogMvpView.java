@@ -17,10 +17,6 @@ package com.how.should.eat.ui.main.rating;
 
 import com.how.should.eat.ui.base.DialogMvpView;
 
-/**
- * Created by janisharali on 24/05/17.
- */
-
 public interface RatingDialogMvpView extends DialogMvpView {
 
     void openPlayStoreForRating();

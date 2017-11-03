@@ -36,10 +36,6 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by janisharali on 25/05/17.
- */
-
 public class OpenSourceFragment extends BaseFragment implements
         OpenSourceMvpView, OpenSourceAdapter.Callback {
 

@@ -17,10 +17,6 @@ package com.how.should.eat.ui.about;
 
 import com.how.should.eat.ui.base.MvpView;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public interface AboutMvpView extends MvpView {
 
 }

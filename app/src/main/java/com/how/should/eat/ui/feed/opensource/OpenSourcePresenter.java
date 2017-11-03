@@ -27,10 +27,6 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 
-/**
- * Created by janisharali on 25/05/17.
- */
-
 public class OpenSourcePresenter<V extends OpenSourceMvpView> extends BasePresenter<V>
         implements OpenSourceMvpPresenter<V> {
 

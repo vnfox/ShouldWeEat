@@ -26,11 +26,6 @@ import javax.inject.Inject;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 
-
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
         implements MainMvpPresenter<V> {
 

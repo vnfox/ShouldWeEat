@@ -31,11 +31,6 @@ import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.util.Log;
 
-
-/**
- * Created by janisharali on 01/02/17.
- */
-
 public class RoundedImageView extends AppCompatImageView {
 
     private static final String TAG = "RoundedImageView";

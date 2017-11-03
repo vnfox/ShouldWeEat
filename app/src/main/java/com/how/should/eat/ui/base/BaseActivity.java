@@ -43,10 +43,6 @@ import com.how.should.eat.utils.NetworkUtils;
 import butterknife.Unbinder;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public abstract class BaseActivity extends AppCompatActivity
         implements MvpView, BaseFragment.Callback {
 

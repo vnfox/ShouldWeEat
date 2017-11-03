@@ -23,9 +23,6 @@ import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Property;
 
-/**
- * Created by janisharali on 28/01/17.
- */
 
 @Entity(nameInDb = "options")
 public class Option {

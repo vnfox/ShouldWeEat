@@ -28,10 +28,6 @@ import com.how.should.eat.utils.CommonUtils;
 
 import butterknife.Unbinder;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public abstract class BaseFragment extends Fragment implements MvpView {
 
     private BaseActivity mActivity;

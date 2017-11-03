@@ -28,11 +28,6 @@ import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 
-
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public class SplashActivity extends BaseActivity implements SplashMvpView {
 
     @Inject

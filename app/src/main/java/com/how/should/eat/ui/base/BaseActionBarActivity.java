@@ -31,10 +31,6 @@ import com.how.should.eat.di.module.ActivityModule;
 
 import butterknife.BindView;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public abstract class BaseActionBarActivity extends BaseActivity
         implements BaseActionView {
 

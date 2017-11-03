@@ -17,10 +17,6 @@ package com.how.should.eat.ui.main.rating;
 
 import com.how.should.eat.ui.base.MvpPresenter;
 
-/**
- * Created by janisharali on 22/03/17.
- */
-
 public interface RatingDialogMvpPresenter<V extends RatingDialogMvpView> extends MvpPresenter<V> {
 
     void onRatingSubmitted(float rating, String message);

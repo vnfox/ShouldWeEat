@@ -201,6 +201,10 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         mDrawerToggle.syncState();
         setupNavMenu();
         mPresenter.onNavMenuCreated();
+
+        //Todo open myFeed
+        openMyFeedActivity();
+
     }
 
     void setupNavMenu() {

@@ -17,10 +17,6 @@ package com.how.should.eat.ui.feed.blogs;
 
 import com.how.should.eat.ui.base.MvpPresenter;
 
-/**
- * Created by janisharali on 25/05/17.
- */
-
 public interface BlogMvpPresenter<V extends BlogMvpView>
         extends MvpPresenter<V> {
 

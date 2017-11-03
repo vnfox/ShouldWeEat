@@ -38,10 +38,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by janisharali on 21/03/17.
- */
-
 public class RateUsDialog extends BaseDialog implements RatingDialogMvpView {
 
     private static final String TAG = "RateUsDialog";

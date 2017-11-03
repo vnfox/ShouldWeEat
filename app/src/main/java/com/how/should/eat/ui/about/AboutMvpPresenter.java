@@ -19,10 +19,6 @@ package com.how.should.eat.ui.about;
 import com.how.should.eat.di.PerActivity;
 import com.how.should.eat.ui.base.MvpPresenter;
 
-/**
- * Created by janisharali on 28/01/17.
- */
-
 @PerActivity
 public interface AboutMvpPresenter<V extends AboutMvpView> extends MvpPresenter<V> {
 

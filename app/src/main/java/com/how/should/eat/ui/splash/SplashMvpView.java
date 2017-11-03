@@ -17,9 +17,6 @@ package com.how.should.eat.ui.splash;
 
 import com.how.should.eat.ui.base.MvpView;
 
-/**
- * Created by janisharali on 27/01/17.
- */
 
 public interface SplashMvpView extends MvpView {
 

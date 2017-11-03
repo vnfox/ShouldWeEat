@@ -31,11 +31,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public class LoginActivity extends BaseActivity implements LoginMvpView {
 
     @Inject

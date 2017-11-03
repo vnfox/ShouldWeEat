@@ -17,10 +17,6 @@ package com.how.should.eat.ui.login;
 
 import com.how.should.eat.ui.base.MvpView;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public interface LoginMvpView extends MvpView {
 
     void openMainActivity();

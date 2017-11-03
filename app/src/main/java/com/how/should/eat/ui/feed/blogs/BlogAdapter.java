@@ -36,11 +36,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-/**
- * Created by Janisharali on 25-05-2017.
- */
-
 public class BlogAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     public static final int VIEW_TYPE_EMPTY = 0;

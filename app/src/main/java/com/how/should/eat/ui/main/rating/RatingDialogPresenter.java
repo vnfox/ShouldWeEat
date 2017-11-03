@@ -25,10 +25,6 @@ import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
 
-/**
- * Created by janisharali on 22/03/17.
- */
-
 public class RatingDialogPresenter<V extends RatingDialogMvpView> extends BasePresenter<V>
         implements RatingDialogMvpPresenter<V> {
 

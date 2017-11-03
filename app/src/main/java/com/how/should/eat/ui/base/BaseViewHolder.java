@@ -18,10 +18,6 @@ package com.how.should.eat.ui.base;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-/**
- * Created by janisharali on 24/05/17.
- */
-
 public abstract class BaseViewHolder extends RecyclerView.ViewHolder {
 
     private int mCurrentPosition;

@@ -19,10 +19,6 @@ package com.how.should.eat.ui.splash;
 import com.how.should.eat.di.PerActivity;
 import com.how.should.eat.ui.base.MvpPresenter;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 @PerActivity
 public interface SplashMvpPresenter<V extends SplashMvpView> extends MvpPresenter<V> {
 

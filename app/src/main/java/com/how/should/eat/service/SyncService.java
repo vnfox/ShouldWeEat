@@ -29,10 +29,6 @@ import com.how.should.eat.utils.AppLogger;
 
 import javax.inject.Inject;
 
-/**
- * Created by janisharali on 01/02/17.
- */
-
 public class SyncService extends Service {
 
     private static final String TAG = "SyncService";

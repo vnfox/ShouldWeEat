@@ -36,10 +36,6 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by janisharali on 25/05/17.
- */
-
 public class BlogFragment extends BaseFragment implements
         BlogMvpView, BlogAdapter.Callback {
 

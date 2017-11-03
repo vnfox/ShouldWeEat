@@ -33,10 +33,6 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by janisharali on 27/01/17.
- */
-
 public final class CommonUtils {
 
     private static final String TAG = "CommonUtils";

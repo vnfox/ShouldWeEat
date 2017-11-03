@@ -22,10 +22,6 @@ import android.net.Uri;
 import com.how.should.eat.R;
 
 
-/**
- * Created by janisharali on 24/05/17.
- */
-
 public final class AppUtils {
 
     private AppUtils() {
