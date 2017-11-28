@@ -18,6 +18,7 @@ package com.how.should.eat.ui.details;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 
 import com.how.should.eat.R;
 import com.how.should.eat.ui.base.BaseActionBarActivity;
@@ -30,6 +31,8 @@ public class DetailsActivity extends BaseActionBarActivity implements DetailsVie
 
     @Inject
     DetailsPresenter<DetailsView> mPresenter;
+
+    private CollapsingToolbarLayout mCollapsingToolbarLayout;
 
     public static Intent getStartIntent(Context context) {
         Intent intent = new Intent(context, DetailsActivity.class);
