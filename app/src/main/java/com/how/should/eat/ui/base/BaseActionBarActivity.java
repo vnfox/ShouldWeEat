@@ -23,7 +23,7 @@ import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.how.should.eat.MvpApp;
+import com.how.should.eat.MyApp;
 import com.how.should.eat.R;
 import com.how.should.eat.di.component.ActivityComponent;
 import com.how.should.eat.di.component.DaggerActivityComponent;
@@ -44,7 +44,7 @@ public abstract class BaseActionBarActivity extends BaseActivity
         super.onCreate(savedInstanceState);
         mActivityComponent = DaggerActivityComponent.builder()
                 .activityModule(new ActivityModule(this))
-                .applicationComponent(((MvpApp) getApplication()).getComponent())
+                .applicationComponent(((MyApp) getApplication()).getComponent())
                 .build();
 
     }

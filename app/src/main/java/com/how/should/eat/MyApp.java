@@ -14,7 +14,7 @@ import javax.inject.Inject;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
-public class MvpApp extends Application {
+public class MyApp extends Application {
 
     @Inject
     DataManager mDataManager;

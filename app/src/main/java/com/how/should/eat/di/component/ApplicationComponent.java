@@ -19,7 +19,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.how.should.eat.di.ApplicationContext;
-import com.how.should.eat.MvpApp;
+import com.how.should.eat.MyApp;
 import com.how.should.eat.data.DataManager;
 import com.how.should.eat.di.module.ApplicationModule;
 import com.how.should.eat.service.SyncService;
@@ -32,7 +32,7 @@ import dagger.Component;
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
 
-    void inject(MvpApp app);
+    void inject(MyApp app);
 
     void inject(SyncService service);
 

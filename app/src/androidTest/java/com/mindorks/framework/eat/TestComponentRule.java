@@ -17,7 +17,7 @@ package com.mindorks.framework.eat;
 
 import android.content.Context;
 
-import com.how.should.eat.MvpApp;
+import com.how.should.eat.MyApp;
 import com.how.should.eat.data.DataManager;
 import com.mindorks.framework.eat.di.component.DaggerTestComponent;
 import com.mindorks.framework.eat.di.component.TestComponent;
@@ -49,7 +49,7 @@ public class TestComponentRule implements TestRule {
     }
 
     private void setupDaggerTestComponentInApplication() {
-        MvpApp application = ((MvpApp) mContext.getApplicationContext());
+        MyApp application = ((MyApp) mContext.getApplicationContext());
         mTestComponent = DaggerTestComponent.builder()
                 .applicationTestModule(new ApplicationTestModule(application))
                 .build();

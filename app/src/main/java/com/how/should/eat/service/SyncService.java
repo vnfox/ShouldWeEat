@@ -21,7 +21,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
-import com.how.should.eat.MvpApp;
+import com.how.should.eat.MyApp;
 import com.how.should.eat.data.DataManager;
 import com.how.should.eat.di.component.DaggerServiceComponent;
 import com.how.should.eat.di.component.ServiceComponent;
@@ -53,7 +53,7 @@ public class SyncService extends Service {
     public void onCreate() {
         super.onCreate();
         ServiceComponent component = DaggerServiceComponent.builder()
-                .applicationComponent(((MvpApp) getApplication()).getComponent())
+                .applicationComponent(((MyApp) getApplication()).getComponent())
                 .build();
         component.inject(this);
     }

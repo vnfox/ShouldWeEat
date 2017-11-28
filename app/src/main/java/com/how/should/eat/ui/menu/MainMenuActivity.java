@@ -14,6 +14,7 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.how.should.eat.BuildConfig;
 import com.how.should.eat.R;
@@ -45,12 +46,13 @@ public class MainMenuActivity extends BaseActionBarActivity implements MainMenuV
     TextView mAppVersionTextView;
 
     private TextView mNameTextView;
-
     private TextView mEmailTextView;
 
     private RoundedImageView mProfileImageView;
 
     private ActionBarDrawerToggle mDrawerToggle;
+
+    private String mCurrentFragment = "";
 
     public static Intent getStartIntent(Context context) {
         Intent intent = new Intent(context, MainMenuActivity.class);
@@ -139,6 +141,7 @@ public class MainMenuActivity extends BaseActionBarActivity implements MainMenuV
     @Override
     public void showAboutFragment() {
         lockDrawer();
+        mCurrentFragment = AboutFragment.TAG;
         getSupportFragmentManager()
                 .beginTransaction()
                 .disallowAddToBackStack()
@@ -185,15 +188,8 @@ public class MainMenuActivity extends BaseActionBarActivity implements MainMenuV
         setupNavMenu();
         mPresenter.onNavMenuCreated();
 
-
-        //Todo refactor  show Feeds
-        getSupportFragmentManager()
-                .beginTransaction()
-                .disallowAddToBackStack()
-                .setCustomAnimations(R.anim.slide_left, R.anim.slide_right)
-                .add(R.id.root_view_container, MainFeedFragment.newInstance(), MainFeedFragment.TAG)
-                .commit();
-
+        //Open My Feeds
+        openMyFeedActivity();
     }
 
     void setupNavMenu() {
@@ -208,14 +204,23 @@ public class MainMenuActivity extends BaseActionBarActivity implements MainMenuV
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         mDrawer.closeDrawer(GravityCompat.START);
                         switch (item.getItemId()) {
+                            case R.id.nav_item_feed:
+                                mPresenter.onDrawerMyFeedClick();
+                                return true;
+                            case R.id.nav_item_food_benefit:
+                                Toast.makeText(getApplicationContext(), "Food Benefit", Toast.LENGTH_LONG).show();
+                                return true;
+                            case R.id.nav_item_quick_remedies:
+                                Toast.makeText(getApplicationContext(), "Quick Remedies", Toast.LENGTH_LONG).show();
+                                return true;
+                            case R.id.nav_item_quick_tip:
+                                Toast.makeText(getApplicationContext(), "Quick Tips", Toast.LENGTH_LONG).show();
+                                return true;
                             case R.id.nav_item_about:
                                 mPresenter.onDrawerOptionAboutClick();
                                 return true;
                             case R.id.nav_item_rate_us:
                                 mPresenter.onDrawerRateUsClick();
-                                return true;
-                            case R.id.nav_item_feed:
-                                mPresenter.onDrawerMyFeedClick();
                                 return true;
                             case R.id.nav_item_logout:
                                 mPresenter.onDrawerOptionLogoutClick();
@@ -240,7 +245,16 @@ public class MainMenuActivity extends BaseActionBarActivity implements MainMenuV
 
     @Override
     public void openMyFeedActivity() {
-        startActivity(FeedActivity.getStartIntent(this));
+        if (!mCurrentFragment.contentEquals(MainFeedFragment.TAG)) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .disallowAddToBackStack()
+                    .setCustomAnimations(R.anim.slide_left, R.anim.slide_right)
+                    .add(R.id.root_view_container, MainFeedFragment.newInstance(), MainFeedFragment.TAG)
+                    .commit();
+
+            mCurrentFragment = MainFeedFragment.TAG;
+        }
     }
 
     @Override
