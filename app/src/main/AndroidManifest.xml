@@ -53,6 +53,11 @@
             android:name="com.how.should.eat.ui.feed.FeedActivity"
             android:launchMode="singleTop"
             android:parentActivityName="com.how.should.eat.ui.menu.MainMenuActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.how.should.eat.ui.details.DetailsActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->

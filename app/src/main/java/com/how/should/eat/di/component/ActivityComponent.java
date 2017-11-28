@@ -15,6 +15,7 @@
 
 package com.how.should.eat.di.component;
 
+import com.how.should.eat.ui.details.DetailsActivity;
 import com.how.should.eat.ui.main.MainFeedFragment;
 import com.how.should.eat.ui.menu.MainMenuActivity;
 import com.how.should.eat.ui.menu.rating.RateUsDialog;
@@ -51,4 +52,5 @@ public interface ActivityComponent {
 
     void inject(MainFeedFragment f);
 
+    void inject(DetailsActivity activity);
 }

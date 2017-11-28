@@ -15,8 +15,6 @@
 
 package com.how.should.eat.ui.main;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +27,6 @@ import com.bumptech.glide.Glide;
 import com.how.should.eat.R;
 import com.how.should.eat.data.network.model.BlogResponse;
 import com.how.should.eat.ui.base.BaseViewHolder;
-import com.how.should.eat.utils.AppLogger;
 
 import java.util.List;
 
@@ -42,6 +39,7 @@ public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     public static final int VIEW_TYPE_EMPTY = 0;
     public static final int VIEW_TYPE_NORMAL = 1;
 
+    private onItemListener mListener;
     private Callback mCallback;
     private List<BlogResponse.Blog> mBlogResponseList;
 
@@ -51,6 +49,10 @@ public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     public void setCallback(Callback callback) {
         mCallback = callback;
+    }
+
+    public void setOnListener(onItemListener listener){
+        mListener = listener;
     }
 
     @Override
@@ -97,6 +99,10 @@ public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     public interface Callback {
         void onBlogEmptyViewRetryClick();
+    }
+
+    public interface onItemListener {
+        void onItemClick();
     }
 
     public class ViewHolder extends BaseViewHolder {
@@ -159,17 +165,11 @@ public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (blog.getBlogUrl() != null) {
-                        try {
-                            Intent intent = new Intent();
-                            intent.setAction(Intent.ACTION_VIEW);
-                            intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                            intent.setData(Uri.parse(blog.getBlogUrl()));
-                            itemView.getContext().startActivity(intent);
-                        } catch (Exception e) {
-                            AppLogger.d("url error");
-                        }
-                    }
+
+                    //Todo refactor
+                    //show detail
+                    //startActivity(FeedActivity.getStartIntent(this));
+                    mListener.onItemClick();
                 }
             });
         }

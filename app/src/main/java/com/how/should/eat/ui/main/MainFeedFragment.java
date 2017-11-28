@@ -28,9 +28,7 @@ import com.how.should.eat.R;
 import com.how.should.eat.data.network.model.BlogResponse;
 import com.how.should.eat.di.component.ActivityComponent;
 import com.how.should.eat.ui.base.BaseFragment;
-import com.how.should.eat.ui.feed.blogs.BlogAdapter;
-import com.how.should.eat.ui.feed.blogs.BlogMvpPresenter;
-import com.how.should.eat.ui.feed.blogs.BlogMvpView;
+import com.how.should.eat.ui.details.DetailsActivity;
 
 import java.util.List;
 
@@ -40,7 +38,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainFeedFragment extends BaseFragment implements
-        MainFeedView, MainFeedAdapter.Callback {
+        MainFeedView, MainFeedAdapter.Callback, MainFeedAdapter.onItemListener {
 
     public static final String TAG = "BlogFragment";
 
@@ -75,6 +73,7 @@ public class MainFeedFragment extends BaseFragment implements
             setUnBinder(ButterKnife.bind(this, view));
             mPresenter.onAttach(this);
             mBlogAdapter.setCallback(this);
+            mBlogAdapter.setOnListener(this);
         }
         return view;
     }
@@ -103,5 +102,20 @@ public class MainFeedFragment extends BaseFragment implements
     public void onDestroyView() {
         mPresenter.onDetach();
         super.onDestroyView();
+    }
+
+    @Override
+    public void onItemClick() {
+        //Shoe details screen
+
+        startActivity(DetailsActivity.getStartIntent(getActivity()));
+        //Todo
+
+        /*getFragmentManager()
+                .beginTransaction()
+                .disallowAddToBackStack()
+                .setCustomAnimations(R.anim.slide_left, R.anim.slide_right)
+                .add(R.id.root_view_container, DetailsFragment.newInstance(), DetailsFragment.TAG)
+                .commit();*/
     }
 }

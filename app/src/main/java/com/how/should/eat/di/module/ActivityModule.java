@@ -23,6 +23,9 @@ import com.how.should.eat.data.network.model.BlogResponse;
 import com.how.should.eat.data.network.model.OpenSourceResponse;
 import com.how.should.eat.di.ActivityContext;
 import com.how.should.eat.ui.about.AboutMvpView;
+import com.how.should.eat.ui.details.DetailsPresenter;
+import com.how.should.eat.ui.details.DetailsPresenterImpl;
+import com.how.should.eat.ui.details.DetailsView;
 import com.how.should.eat.ui.feed.FeedMvpPresenter;
 import com.how.should.eat.ui.feed.FeedPagerAdapter;
 import com.how.should.eat.ui.feed.blogs.BlogMvpPresenter;
@@ -172,6 +175,12 @@ public class ActivityModule {
     @Provides
     MainFeedPresenter<MainFeedView> provideMainFeedPresenter(
             MainFeedPresenterImpl<MainFeedView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    DetailsPresenter<DetailsView> provideDetailsPresenter(
+            DetailsPresenterImpl<DetailsView> presenter) {
         return presenter;
     }
 }
