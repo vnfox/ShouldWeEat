@@ -17,20 +17,28 @@ package com.how.should.eat.ui.details;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.graphics.Palette;
+import android.widget.ImageView;
 
 import com.how.should.eat.R;
 import com.how.should.eat.ui.base.BaseActionBarActivity;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class DetailsActivity extends BaseActionBarActivity implements DetailsView {
 
     @Inject
     DetailsPresenter<DetailsView> mPresenter;
+
+    @BindView(R.id.moviePoster)
+    ImageView mImgPoster;
 
     private CollapsingToolbarLayout mCollapsingToolbarLayout;
 
@@ -59,5 +67,23 @@ public class DetailsActivity extends BaseActionBarActivity implements DetailsVie
     @Override
     protected void setUp() {
         super.setUp();
+
+        mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        mCollapsingToolbarLayout.setTitle("Details");
+
+        //Set Color Toolbar
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
+                R.mipmap.img_detail);
+
+        Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
+            @Override
+            public void onGenerated(Palette palette) {
+                mCollapsingToolbarLayout.setContentScrimColor(palette.getMutedColor(R.attr.colorPrimary));
+                mCollapsingToolbarLayout.setStatusBarScrimColor(palette.getMutedColor(R.attr.colorPrimaryDark));
+            }
+        });
+
+        mCollapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.collapsedappbar);
+        mCollapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.expandedappbar);
     }
 }
