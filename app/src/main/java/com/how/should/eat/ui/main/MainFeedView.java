@@ -15,12 +15,12 @@
 
 package com.how.should.eat.ui.main;
 
-import com.how.should.eat.data.network.model.BlogResponse;
+import com.how.should.eat.data.network.model.feed.FeedResponse;
 import com.how.should.eat.ui.base.MvpView;
 
 import java.util.List;
 
 public interface MainFeedView extends MvpView {
 
-    void updateBlog(List<BlogResponse.Blog> blogList);
+    void updateBlog(List<FeedResponse.Feed> blogList);
 }

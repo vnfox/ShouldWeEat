@@ -21,7 +21,6 @@ import com.how.should.eat.R;
 import com.how.should.eat.ui.about.AboutFragment;
 import com.how.should.eat.ui.base.BaseActionBarActivity;
 import com.how.should.eat.ui.custom.RoundedImageView;
-import com.how.should.eat.ui.feed.FeedActivity;
 import com.how.should.eat.ui.login.LoginActivity;
 import com.how.should.eat.ui.main.MainFeedFragment;
 import com.how.should.eat.ui.menu.rating.RateUsDialog;

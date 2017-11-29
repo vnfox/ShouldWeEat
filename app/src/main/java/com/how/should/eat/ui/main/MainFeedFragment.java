@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.how.should.eat.R;
 import com.how.should.eat.data.network.model.BlogResponse;
+import com.how.should.eat.data.network.model.feed.FeedResponse;
 import com.how.should.eat.di.component.ActivityComponent;
 import com.how.should.eat.ui.base.BaseFragment;
 import com.how.should.eat.ui.details.DetailsActivity;
@@ -50,7 +51,7 @@ public class MainFeedFragment extends BaseFragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_blog, container, false);
+        View view = inflater.inflate(R.layout.fragment_main_feed, container, false);
 
         ActivityComponent component = getActivityComponent();
         if (component != null) {
@@ -79,7 +80,7 @@ public class MainFeedFragment extends BaseFragment implements
     }
 
     @Override
-    public void updateBlog(List<BlogResponse.Blog> blogList) {
+    public void updateBlog(List<FeedResponse.Feed> blogList) {
         mBlogAdapter.addItems(blogList);
     }
 
@@ -91,7 +92,7 @@ public class MainFeedFragment extends BaseFragment implements
 
     @Override
     public void onItemClick() {
-        //Shoe details screen
+        //Show details screen
         startActivity(DetailsActivity.getStartIntent(getActivity()));
     }
 }

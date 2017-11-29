@@ -27,6 +27,7 @@ import com.how.should.eat.data.db.model.Option;
 import com.how.should.eat.data.db.model.Question;
 import com.how.should.eat.data.network.model.BlogResponse;
 import com.how.should.eat.data.network.model.OpenSourceResponse;
+import com.how.should.eat.data.network.model.feed.FeedResponse;
 import com.how.should.eat.data.prefs.PreferencesHelper;
 import com.how.should.eat.di.ApplicationContext;
 import com.how.should.eat.data.db.model.User;
@@ -301,5 +302,12 @@ public class AppDataManager implements DataManager {
     @Override
     public Observable<OpenSourceResponse> getOpenSourceApiCall() {
         return mApiHelper.getOpenSourceApiCall();
+    }
+
+
+    //Implement API
+    @Override
+    public Observable<FeedResponse> getNewFeedsApiCall() {
+        return mApiHelper.getNewFeedsApiCall();
     }
 }

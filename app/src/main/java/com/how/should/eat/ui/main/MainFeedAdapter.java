@@ -26,6 +26,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.how.should.eat.R;
 import com.how.should.eat.data.network.model.BlogResponse;
+import com.how.should.eat.data.network.model.feed.FeedResponse;
 import com.how.should.eat.ui.base.BaseViewHolder;
 
 import java.util.List;
@@ -41,9 +42,9 @@ public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     private onItemListener mListener;
     private Callback mCallback;
-    private List<BlogResponse.Blog> mBlogResponseList;
+    private List<FeedResponse.Feed> mBlogResponseList;
 
-    public MainFeedAdapter(List<BlogResponse.Blog> blogResponseList) {
+    public MainFeedAdapter(List<FeedResponse.Feed> blogResponseList) {
         mBlogResponseList = blogResponseList;
     }
 
@@ -51,7 +52,7 @@ public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         mCallback = callback;
     }
 
-    public void setOnListener(onItemListener listener){
+    public void setOnListener(onItemListener listener) {
         mListener = listener;
     }
 
@@ -66,7 +67,7 @@ public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         switch (viewType) {
             case VIEW_TYPE_NORMAL:
                 return new ViewHolder(
-                        LayoutInflater.from(parent.getContext()).inflate(R.layout.item_blog_view, parent, false));
+                        LayoutInflater.from(parent.getContext()).inflate(R.layout.item_feed_view, parent, false));
             case VIEW_TYPE_EMPTY:
             default:
                 return new EmptyViewHolder(
@@ -92,7 +93,7 @@ public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         }
     }
 
-    public void addItems(List<BlogResponse.Blog> blogList) {
+    public void addItems(List<FeedResponse.Feed> blogList) {
         mBlogResponseList.addAll(blogList);
         notifyDataSetChanged();
     }
@@ -113,15 +114,6 @@ public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         @BindView(R.id.title_text_view)
         TextView titleTextView;
 
-        @BindView(R.id.author_text_view)
-        TextView authorTextView;
-
-        @BindView(R.id.date_text_view)
-        TextView dateTextView;
-
-        @BindView(R.id.content_text_view)
-        TextView contentTextView;
-
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -130,17 +122,16 @@ public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         protected void clear() {
             coverImageView.setImageDrawable(null);
             titleTextView.setText("");
-            contentTextView.setText("");
         }
 
         public void onBind(int position) {
             super.onBind(position);
 
-            final BlogResponse.Blog blog = mBlogResponseList.get(position);
+            final FeedResponse.Feed blog = mBlogResponseList.get(position);
 
-            if (blog.getCoverImgUrl() != null) {
-                Glide.with(itemView.getContext())
-                        .load(blog.getCoverImgUrl())
+                if (blog.getCoverImgUrl() != null) {
+                    Glide.with(itemView.getContext())
+                            .load(blog.getCoverImgUrl())
                         .asBitmap()
                         .centerCrop()
                         .into(coverImageView);
@@ -150,25 +141,9 @@ public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                 titleTextView.setText(blog.getTitle());
             }
 
-            if (blog.getAuthor() != null) {
-                authorTextView.setText(blog.getAuthor());
-            }
-
-            if (blog.getDate() != null) {
-                dateTextView.setText(blog.getDate());
-            }
-
-            if (blog.getDescription() != null) {
-                contentTextView.setText(blog.getDescription());
-            }
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    //Todo refactor
-                    //show detail
-                    //startActivity(FeedActivity.getStartIntent(this));
                     mListener.onItemClick();
                 }
             });

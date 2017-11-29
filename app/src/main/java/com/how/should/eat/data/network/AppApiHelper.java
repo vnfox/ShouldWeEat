@@ -20,6 +20,7 @@ import com.how.should.eat.data.network.model.LogoutResponse;
 import com.how.should.eat.data.network.model.OpenSourceResponse;
 import com.how.should.eat.data.network.model.LoginRequest;
 import com.how.should.eat.data.network.model.LoginResponse;
+import com.how.should.eat.data.network.model.feed.FeedResponse;
 import com.rx2androidnetworking.Rx2AndroidNetworking;
 
 import javax.inject.Inject;
@@ -94,6 +95,14 @@ public class AppApiHelper implements ApiHelper {
                 .addHeaders(mApiHeader.getProtectedApiHeader())
                 .build()
                 .getObjectObservable(OpenSourceResponse.class);
+    }
+
+    @Override
+    public Observable<FeedResponse> getNewFeedsApiCall() {
+        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_NEW_FEED)
+                .addHeaders(mApiHeader.getProtectedApiHeader())
+                .build()
+                .getObjectObservable(FeedResponse.class);
     }
 }
 

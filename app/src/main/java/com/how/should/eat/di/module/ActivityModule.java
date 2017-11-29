@@ -21,6 +21,7 @@ import android.support.v7.widget.LinearLayoutManager;
 
 import com.how.should.eat.data.network.model.BlogResponse;
 import com.how.should.eat.data.network.model.OpenSourceResponse;
+import com.how.should.eat.data.network.model.feed.FeedResponse;
 import com.how.should.eat.di.ActivityContext;
 import com.how.should.eat.ui.about.AboutMvpView;
 import com.how.should.eat.ui.details.DetailsPresenter;
@@ -169,7 +170,7 @@ public class ActivityModule {
 
     @Provides
     MainFeedAdapter provideMainFeedAdapter() {
-        return new MainFeedAdapter(new ArrayList<BlogResponse.Blog>());
+        return new MainFeedAdapter(new ArrayList<FeedResponse.Feed>());
     }
 
     @Provides

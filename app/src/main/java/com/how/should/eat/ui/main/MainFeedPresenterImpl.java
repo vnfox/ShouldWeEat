@@ -18,6 +18,7 @@ package com.how.should.eat.ui.main;
 import com.androidnetworking.error.ANError;
 import com.how.should.eat.data.DataManager;
 import com.how.should.eat.data.network.model.BlogResponse;
+import com.how.should.eat.data.network.model.feed.FeedResponse;
 import com.how.should.eat.ui.base.BasePresenter;
 import com.how.should.eat.ui.feed.blogs.BlogMvpPresenter;
 import com.how.should.eat.ui.feed.blogs.BlogMvpView;
@@ -43,15 +44,15 @@ public class MainFeedPresenterImpl<V extends MainFeedView> extends BasePresenter
     public void onViewPrepared() {
         getMvpView().showLoading();
         getCompositeDisposable().add(getDataManager()
-                .getBlogApiCall()
+                .getNewFeedsApiCall()
                 .subscribeOn(getSchedulerProvider().io())
                 .observeOn(getSchedulerProvider().ui())
-                .subscribe(new Consumer<BlogResponse>() {
+                .subscribe(new Consumer<FeedResponse>() {
                     @Override
-                    public void accept(@NonNull BlogResponse blogResponse)
+                    public void accept(@NonNull FeedResponse feedResponse)
                             throws Exception {
-                        if (blogResponse != null && blogResponse.getData() != null) {
-                            getMvpView().updateBlog(blogResponse.getData());
+                        if (feedResponse != null && feedResponse.getData() != null) {
+                            getMvpView().updateBlog(feedResponse.getData());
                         }
                         getMvpView().hideLoading();
                     }
