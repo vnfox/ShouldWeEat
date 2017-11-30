@@ -85,4 +85,13 @@
     <string name="please_retry">Please Retry</string>
     <string name="retry">Retry</string>
 
+    <!--Hqdat-->
+    <!--feed-->
+    <string name="food_benefit">Foods Benefits</string>
+    <string name="tab_fruit">Fruits</string>
+    <string name="tab_vegetables">Vegetables</string>
+    <string name="tab_meat">Meat</string>
+    <string name="tab_fish">Fish</string>
+    <string name="tab_nut">Nuts</string>
+
 </resources>

@@ -16,7 +16,6 @@
 package com.how.should.eat.ui.details;
 
 import com.how.should.eat.ui.base.MvpPresenter;
-import com.how.should.eat.ui.main.MainFeedView;
 
 public interface DetailsPresenter<V extends DetailsView>
         extends MvpPresenter<V> {

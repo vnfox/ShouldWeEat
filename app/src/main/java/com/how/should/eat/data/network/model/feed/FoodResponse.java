@@ -6,26 +6,26 @@ import com.how.should.eat.data.network.model.BaseResponse;
 
 import java.util.List;
 
-public class FeedResponse extends BaseResponse {
+public class FoodResponse extends BaseResponse {
 
     @Expose
     @SerializedName("data")
-    private List<Feed> data;
+    private List<Food> data;
 
-    public List<Feed> getData() {
+    public List<Food> getData() {
         return data;
     }
 
-    public void setData(List<Feed> data) {
+    public void setData(List<Food> data) {
         this.data = data;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof FeedResponse)) return false;
+        if (!(o instanceof FoodResponse)) return false;
 
-        FeedResponse that = (FeedResponse) o;
+        FoodResponse that = (FoodResponse) o;
 
         if (!statusCode.equals(that.statusCode)) return false;
         if (!message.equals(that.message)) return false;
@@ -41,7 +41,7 @@ public class FeedResponse extends BaseResponse {
         return result;
     }
 
-    public static class Feed {
+    public static class Food {
 
         @Expose
         @SerializedName("blog_url")
@@ -118,9 +118,9 @@ public class FeedResponse extends BaseResponse {
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
-            if (!(o instanceof Feed)) return false;
+            if (!(o instanceof Food)) return false;
 
-            Feed blog = (Feed) o;
+            Food blog = (Food) o;
 
             if (!blogUrl.equals(blog.blogUrl)) return false;
             if (!coverImgUrl.equals(blog.coverImgUrl)) return false;

@@ -5,7 +5,7 @@ import com.how.should.eat.data.network.model.LoginResponse;
 import com.how.should.eat.data.network.model.LogoutResponse;
 import com.how.should.eat.data.network.model.OpenSourceResponse;
 import com.how.should.eat.data.network.model.LoginRequest;
-import com.how.should.eat.data.network.model.feed.FeedResponse;
+import com.how.should.eat.data.network.model.feed.FoodResponse;
 
 import io.reactivex.Observable;
 
@@ -25,5 +25,13 @@ public interface ApiHelper {
 
     Observable<OpenSourceResponse> getOpenSourceApiCall();
 
-    Observable<FeedResponse> getNewFeedsApiCall();
+    Observable<FoodResponse> getNewFruitsApiCall();
+
+    Observable<FoodResponse> getNewVegetablesApiCall();
+
+    Observable<FoodResponse> getNewMeatApiCall();
+
+    Observable<FoodResponse> getNewsFishApiCall();
+
+    Observable<FoodResponse> getNewsNutsApiCall();
 }

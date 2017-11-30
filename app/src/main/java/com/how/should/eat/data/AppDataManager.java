@@ -27,7 +27,7 @@ import com.how.should.eat.data.db.model.Option;
 import com.how.should.eat.data.db.model.Question;
 import com.how.should.eat.data.network.model.BlogResponse;
 import com.how.should.eat.data.network.model.OpenSourceResponse;
-import com.how.should.eat.data.network.model.feed.FeedResponse;
+import com.how.should.eat.data.network.model.feed.FoodResponse;
 import com.how.should.eat.data.prefs.PreferencesHelper;
 import com.how.should.eat.di.ApplicationContext;
 import com.how.should.eat.data.db.model.User;
@@ -304,10 +304,29 @@ public class AppDataManager implements DataManager {
         return mApiHelper.getOpenSourceApiCall();
     }
 
-
-    //Implement API
+    //Implement Food Benefits
     @Override
-    public Observable<FeedResponse> getNewFeedsApiCall() {
-        return mApiHelper.getNewFeedsApiCall();
+    public Observable<FoodResponse> getNewFruitsApiCall() {
+        return mApiHelper.getNewFruitsApiCall();
+    }
+
+    @Override
+    public Observable<FoodResponse> getNewVegetablesApiCall() {
+        return mApiHelper.getNewVegetablesApiCall();
+    }
+
+    @Override
+    public Observable<FoodResponse> getNewMeatApiCall() {
+        return mApiHelper.getNewMeatApiCall();
+    }
+
+    @Override
+    public Observable<FoodResponse> getNewsFishApiCall() {
+        return mApiHelper.getNewsFishApiCall();
+    }
+
+    @Override
+    public Observable<FoodResponse> getNewsNutsApiCall() {
+        return mApiHelper.getNewsNutsApiCall();
     }
 }

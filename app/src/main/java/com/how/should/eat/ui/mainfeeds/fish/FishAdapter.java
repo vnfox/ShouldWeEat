@@ -13,7 +13,7 @@
  * limitations under the License
  */
 
-package com.how.should.eat.ui.main;
+package com.how.should.eat.ui.mainfeeds.fish;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -25,8 +25,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.how.should.eat.R;
-import com.how.should.eat.data.network.model.BlogResponse;
-import com.how.should.eat.data.network.model.feed.FeedResponse;
+import com.how.should.eat.data.network.model.feed.FoodResponse;
 import com.how.should.eat.ui.base.BaseViewHolder;
 
 import java.util.List;
@@ -35,16 +34,16 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
+public class FishAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     public static final int VIEW_TYPE_EMPTY = 0;
     public static final int VIEW_TYPE_NORMAL = 1;
 
     private onItemListener mListener;
     private Callback mCallback;
-    private List<FeedResponse.Feed> mBlogResponseList;
+    private List<FoodResponse.Food> mBlogResponseList;
 
-    public MainFeedAdapter(List<FeedResponse.Feed> blogResponseList) {
+    public FishAdapter(List<FoodResponse.Food> blogResponseList) {
         mBlogResponseList = blogResponseList;
     }
 
@@ -93,7 +92,7 @@ public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         }
     }
 
-    public void addItems(List<FeedResponse.Feed> blogList) {
+    public void addItems(List<FoodResponse.Food> blogList) {
         mBlogResponseList.addAll(blogList);
         notifyDataSetChanged();
     }
@@ -127,7 +126,7 @@ public class MainFeedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         public void onBind(int position) {
             super.onBind(position);
 
-            final FeedResponse.Feed blog = mBlogResponseList.get(position);
+            final FoodResponse.Food blog = mBlogResponseList.get(position);
 
                 if (blog.getCoverImgUrl() != null) {
                     Glide.with(itemView.getContext())
