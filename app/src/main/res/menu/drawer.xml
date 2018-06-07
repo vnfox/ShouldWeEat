@@ -6,13 +6,7 @@
             android:id="@+id/nav_item_feed"
             android:checked="true"
             android:icon="@drawable/ic_rss_symbol"
-            android:title="@string/feed" />
-
-        <item
-            android:id="@+id/nav_item_food_benefit"
-            android:checked="true"
-            android:icon="@drawable/ic_info_24px"
-            android:title="Food Benefits" />
+            android:title="Foods Benefits" />
 
         <item
             android:id="@+id/nav_item_quick_remedies"

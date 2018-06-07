@@ -21,9 +21,8 @@ import com.how.should.eat.R;
 import com.how.should.eat.ui.about.AboutFragment;
 import com.how.should.eat.ui.base.BaseActionBarActivity;
 import com.how.should.eat.ui.custom.RoundedImageView;
-import com.how.should.eat.ui.feed.FeedActivity;
 import com.how.should.eat.ui.login.LoginActivity;
-import com.how.should.eat.ui.main.MainFeedFragment;
+import com.how.should.eat.ui.mainfeeds.MainFeedFragment;
 import com.how.should.eat.ui.menu.rating.RateUsDialog;
 
 import javax.inject.Inject;
@@ -206,9 +205,6 @@ public class MainMenuActivity extends BaseActionBarActivity implements MainMenuV
                         switch (item.getItemId()) {
                             case R.id.nav_item_feed:
                                 mPresenter.onDrawerMyFeedClick();
-                                return true;
-                            case R.id.nav_item_food_benefit:
-                                Toast.makeText(getApplicationContext(), "Food Benefit", Toast.LENGTH_LONG).show();
                                 return true;
                             case R.id.nav_item_quick_remedies:
                                 Toast.makeText(getApplicationContext(), "Quick Remedies", Toast.LENGTH_LONG).show();

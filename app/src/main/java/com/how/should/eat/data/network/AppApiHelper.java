@@ -20,6 +20,7 @@ import com.how.should.eat.data.network.model.LogoutResponse;
 import com.how.should.eat.data.network.model.OpenSourceResponse;
 import com.how.should.eat.data.network.model.LoginRequest;
 import com.how.should.eat.data.network.model.LoginResponse;
+import com.how.should.eat.data.network.model.feed.FoodResponse;
 import com.rx2androidnetworking.Rx2AndroidNetworking;
 
 import javax.inject.Inject;
@@ -94,6 +95,46 @@ public class AppApiHelper implements ApiHelper {
                 .addHeaders(mApiHeader.getProtectedApiHeader())
                 .build()
                 .getObjectObservable(OpenSourceResponse.class);
+    }
+
+    @Override
+    public Observable<FoodResponse> getNewFruitsApiCall() {
+        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_FRUIT)
+                .addHeaders(mApiHeader.getProtectedApiHeader())
+                .build()
+                .getObjectObservable(FoodResponse.class);
+    }
+
+    @Override
+    public Observable<FoodResponse> getNewVegetablesApiCall() {
+        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_VEGETABLES)
+                .addHeaders(mApiHeader.getProtectedApiHeader())
+                .build()
+                .getObjectObservable(FoodResponse.class);
+    }
+
+    @Override
+    public Observable<FoodResponse> getNewMeatApiCall() {
+        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_MEAT)
+                .addHeaders(mApiHeader.getProtectedApiHeader())
+                .build()
+                .getObjectObservable(FoodResponse.class);
+    }
+
+    @Override
+    public Observable<FoodResponse> getNewsFishApiCall() {
+        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_FISH)
+                .addHeaders(mApiHeader.getProtectedApiHeader())
+                .build()
+                .getObjectObservable(FoodResponse.class);
+    }
+
+    @Override
+    public Observable<FoodResponse> getNewsNutsApiCall() {
+        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_NUT)
+                .addHeaders(mApiHeader.getProtectedApiHeader())
+                .build()
+                .getObjectObservable(FoodResponse.class);
     }
 }
 

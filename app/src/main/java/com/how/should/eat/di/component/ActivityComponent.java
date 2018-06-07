@@ -16,7 +16,12 @@
 package com.how.should.eat.di.component;
 
 import com.how.should.eat.ui.details.DetailsActivity;
-import com.how.should.eat.ui.main.MainFeedFragment;
+import com.how.should.eat.ui.mainfeeds.MainFeedFragment;
+import com.how.should.eat.ui.mainfeeds.fish.FishFragment;
+import com.how.should.eat.ui.mainfeeds.fruit.FruitsFragment;
+import com.how.should.eat.ui.mainfeeds.meat.MeatFragment;
+import com.how.should.eat.ui.mainfeeds.nuts.NutsFragment;
+import com.how.should.eat.ui.mainfeeds.vegetables.VegetablesFragment;
 import com.how.should.eat.ui.menu.MainMenuActivity;
 import com.how.should.eat.ui.menu.rating.RateUsDialog;
 import com.how.should.eat.di.PerActivity;
@@ -51,6 +56,16 @@ public interface ActivityComponent {
     void inject(RateUsDialog dialog);
 
     void inject(MainFeedFragment f);
+
+    void inject(FruitsFragment f);
+
+    void inject(VegetablesFragment f);
+
+    void inject(MeatFragment f);
+
+    void inject(FishFragment f);
+
+    void inject(NutsFragment f);
 
     void inject(DetailsActivity activity);
 }

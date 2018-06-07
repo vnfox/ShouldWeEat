@@ -1,26 +1,6 @@
-/*
- * Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://mindorks.com/license/apache-v2
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License
- */
-
 package com.how.should.eat.data.network;
 
-
 import com.how.should.eat.BuildConfig;
-
-/**
- * Created by amitshekhar on 01/02/17.
- */
 
 public final class ApiEndPoint {
 
@@ -41,6 +21,23 @@ public final class ApiEndPoint {
 
     public static final String ENDPOINT_OPEN_SOURCE = BuildConfig.BASE_URL
             + "/5926c34212000035026871cd";
+
+
+
+    public static final String ENDPOINT_FRUIT = BuildConfig.BASE_URL
+            + "/5a1fc792310000b316c0af7b";
+
+    public static final String ENDPOINT_VEGETABLES = BuildConfig.BASE_URL
+            + "/5a1fc7f2310000d116c0af80";
+
+    public static final String ENDPOINT_MEAT = BuildConfig.BASE_URL
+            + "/5a1fc8843100002517c0af86";
+
+    public static final String ENDPOINT_FISH = BuildConfig.BASE_URL
+            + "/5a1fc8a3310000a117c0af87";
+
+    public static final String ENDPOINT_NUT = BuildConfig.BASE_URL
+            + "/5a1fc8b4310000d818c0af88";
 
     private ApiEndPoint() {
         // This class is not publicly instantiable

@@ -1,26 +1,9 @@
-/*
- * Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://mindorks.com/license/apache-v2
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License
- */
-
-package com.how.should.eat.ui.main;
+package com.how.should.eat.ui.mainfeeds.vegetables;
 
 import com.androidnetworking.error.ANError;
 import com.how.should.eat.data.DataManager;
-import com.how.should.eat.data.network.model.BlogResponse;
+import com.how.should.eat.data.network.model.feed.FoodResponse;
 import com.how.should.eat.ui.base.BasePresenter;
-import com.how.should.eat.ui.feed.blogs.BlogMvpPresenter;
-import com.how.should.eat.ui.feed.blogs.BlogMvpView;
 import com.how.should.eat.utils.rx.SchedulerProvider;
 
 import javax.inject.Inject;
@@ -29,13 +12,13 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 
-public class MainFeedPresenterImpl<V extends MainFeedView> extends BasePresenter<V>
-        implements MainFeedPresenter<V> {
+public class VegetablesPresenter<V extends VegetablesView> extends BasePresenter<V>
+        implements VegetablesMvpPresenter<V> {
 
     @Inject
-    public MainFeedPresenterImpl(DataManager dataManager,
-                                 SchedulerProvider schedulerProvider,
-                                 CompositeDisposable compositeDisposable) {
+    public VegetablesPresenter(DataManager dataManager,
+                               SchedulerProvider schedulerProvider,
+                               CompositeDisposable compositeDisposable) {
         super(dataManager, schedulerProvider, compositeDisposable);
     }
 
@@ -43,15 +26,15 @@ public class MainFeedPresenterImpl<V extends MainFeedView> extends BasePresenter
     public void onViewPrepared() {
         getMvpView().showLoading();
         getCompositeDisposable().add(getDataManager()
-                .getBlogApiCall()
+                .getNewVegetablesApiCall()
                 .subscribeOn(getSchedulerProvider().io())
                 .observeOn(getSchedulerProvider().ui())
-                .subscribe(new Consumer<BlogResponse>() {
+                .subscribe(new Consumer<FoodResponse>() {
                     @Override
-                    public void accept(@NonNull BlogResponse blogResponse)
+                    public void accept(@NonNull FoodResponse foodResponse)
                             throws Exception {
-                        if (blogResponse != null && blogResponse.getData() != null) {
-                            getMvpView().updateBlog(blogResponse.getData());
+                        if (foodResponse != null && foodResponse.getData() != null) {
+                            getMvpView().updateData(foodResponse.getData());
                         }
                         getMvpView().hideLoading();
                     }

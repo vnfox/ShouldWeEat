@@ -21,6 +21,7 @@ import android.support.v7.widget.LinearLayoutManager;
 
 import com.how.should.eat.data.network.model.BlogResponse;
 import com.how.should.eat.data.network.model.OpenSourceResponse;
+import com.how.should.eat.data.network.model.feed.FoodResponse;
 import com.how.should.eat.di.ActivityContext;
 import com.how.should.eat.ui.about.AboutMvpView;
 import com.how.should.eat.ui.details.DetailsPresenter;
@@ -32,10 +33,30 @@ import com.how.should.eat.ui.feed.blogs.BlogMvpPresenter;
 import com.how.should.eat.ui.feed.opensource.OpenSourceAdapter;
 import com.how.should.eat.ui.feed.opensource.OpenSourceMvpPresenter;
 import com.how.should.eat.ui.feed.opensource.OpenSourceMvpView;
-import com.how.should.eat.ui.main.MainFeedAdapter;
-import com.how.should.eat.ui.main.MainFeedPresenter;
-import com.how.should.eat.ui.main.MainFeedPresenterImpl;
-import com.how.should.eat.ui.main.MainFeedView;
+import com.how.should.eat.ui.mainfeeds.MainPagerAdapter;
+import com.how.should.eat.ui.mainfeeds.fish.FishAdapter;
+import com.how.should.eat.ui.mainfeeds.fish.FishMvpPresenter;
+import com.how.should.eat.ui.mainfeeds.fish.FishPresenter;
+import com.how.should.eat.ui.mainfeeds.fish.FishView;
+import com.how.should.eat.ui.mainfeeds.fruit.FruitsAdapter;
+import com.how.should.eat.ui.mainfeeds.MainFeedPresenter;
+import com.how.should.eat.ui.mainfeeds.MainFeedPresenterImpl;
+import com.how.should.eat.ui.mainfeeds.MainFeedView;
+import com.how.should.eat.ui.mainfeeds.fruit.FruitsMvpPresenter;
+import com.how.should.eat.ui.mainfeeds.fruit.FruitsPresenter;
+import com.how.should.eat.ui.mainfeeds.fruit.FruitsView;
+import com.how.should.eat.ui.mainfeeds.meat.MeatAdapter;
+import com.how.should.eat.ui.mainfeeds.meat.MeatMvpPresenter;
+import com.how.should.eat.ui.mainfeeds.meat.MeatPresenter;
+import com.how.should.eat.ui.mainfeeds.meat.MeatView;
+import com.how.should.eat.ui.mainfeeds.nuts.NutsAdapter;
+import com.how.should.eat.ui.mainfeeds.nuts.NutsMvpPresenter;
+import com.how.should.eat.ui.mainfeeds.nuts.NutsPresenter;
+import com.how.should.eat.ui.mainfeeds.nuts.NutsView;
+import com.how.should.eat.ui.mainfeeds.vegetables.VegetablesAdapter;
+import com.how.should.eat.ui.mainfeeds.vegetables.VegetablesMvpPresenter;
+import com.how.should.eat.ui.mainfeeds.vegetables.VegetablesPresenter;
+import com.how.should.eat.ui.mainfeeds.vegetables.VegetablesView;
 import com.how.should.eat.ui.menu.MainMenuPresenterImpl;
 import com.how.should.eat.ui.menu.MainMenuView;
 import com.how.should.eat.ui.menu.MainMenuPresenter;
@@ -167,9 +188,10 @@ public class ActivityModule {
         return new LinearLayoutManager(activity);
     }
 
+    //Main Feeds
     @Provides
-    MainFeedAdapter provideMainFeedAdapter() {
-        return new MainFeedAdapter(new ArrayList<BlogResponse.Blog>());
+    MainPagerAdapter provideMainPagerAdapter(AppCompatActivity activity) {
+        return new MainPagerAdapter(activity.getSupportFragmentManager());
     }
 
     @Provides
@@ -178,6 +200,62 @@ public class ActivityModule {
         return presenter;
     }
 
+    @Provides
+    FruitsAdapter provideMainFeedAdapter() {
+        return new FruitsAdapter(new ArrayList<FoodResponse.Food>());
+    }
+
+    @Provides
+    VegetablesMvpPresenter<VegetablesView> provideVegetablesPresenter(
+            VegetablesPresenter<VegetablesView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    VegetablesAdapter provideVegetablesAdapter() {
+        return new VegetablesAdapter(new ArrayList<FoodResponse.Food>());
+    }
+
+    @Provides
+    FruitsMvpPresenter<FruitsView> provideFruitsPresenter(
+            FruitsPresenter<FruitsView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    MeatAdapter provideMeatAdapter() {
+        return new MeatAdapter(new ArrayList<FoodResponse.Food>());
+    }
+
+    @Provides
+    MeatMvpPresenter<MeatView> provideMeatPresenter(
+            MeatPresenter<MeatView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    FishAdapter provideFishAdapter() {
+        return new FishAdapter(new ArrayList<FoodResponse.Food>());
+    }
+
+    @Provides
+    FishMvpPresenter<FishView> provideFishPresenter(
+            FishPresenter<FishView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    NutsAdapter provideNutsAdapter() {
+        return new NutsAdapter(new ArrayList<FoodResponse.Food>());
+    }
+
+    @Provides
+    NutsMvpPresenter<NutsView> provideNutsPresenter(
+            NutsPresenter<NutsView> presenter) {
+        return presenter;
+    }
+
+    //Details
     @Provides
     DetailsPresenter<DetailsView> provideDetailsPresenter(
             DetailsPresenterImpl<DetailsView> presenter) {
